@@ -23,3 +23,4 @@
 ##Do's and don'ts
 1. Work in your branch : *DevFirstName* (e.g : DevRub, DevNico)
 2. Merge regularly to avoid big fucking conflict
+3. /!\ for the pull befor push /!\
