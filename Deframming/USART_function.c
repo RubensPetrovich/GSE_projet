@@ -26,7 +26,6 @@ void USART_Initialize(void)
 }
 
 
-
 // Send String via USART3
 void USART_puts(char* s, USART_TypeDef* my_USART)
 {
