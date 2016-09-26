@@ -4,6 +4,7 @@
 #include "STM32F4xx.h"
 
 #include "USART_function.h"
+#include "Handler.h"
 
 struct MI {
 	int j;
@@ -38,7 +39,7 @@ int main(void) {
 	
 	// Variable Initialisation
 //	char cmd_PC_board[cmd_length_max]; // message send from the PC to the board
-
+	NVIC_Configuration();
 	
 	// Initialisation of the GPIO and USART
   USART_Initialize() ;

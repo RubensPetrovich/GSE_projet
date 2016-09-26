@@ -54,20 +54,20 @@ void GPIO_Initialize(void)
 	GPIO_PinConfigure(GPIOA, 3,GPIO_MODE_AF, GPIO_OUTPUT_PUSH_PULL, GPIO_OUTPUT_SPEED_100MHz, GPIO_PULL_UP);
 }
 
-// Send String via USART3 or USAR2
-void USART_puts(char* s, USART_TypeDef* my_USART)
-{
-	while(*s){
-		while(!USART_GetFlagStatus(USART3, USART_FLAG_TXE));
-		USART_SendData(USART3, *s++) ;
-	}
-}
 
 // Send character via USART3 or USAR2
 void USART_putc(uint16_t s, USART_TypeDef* my_USART)
 {
-	while(!USART_GetFlagStatus( USART3, USART_FLAG_TXE)) ;
-	USART_SendData(USART3, s);
+	while(!USART_GetFlagStatus( my_USART, USART_FLAG_TXE)) ;
+	USART_SendData(my_USART, s);
+}
+
+// Send String via USART3 or USAR2
+void USART_puts(char* s, USART_TypeDef* my_USART)
+{
+	while(*s){
+		USART_putc(*s++, my_USART);
+	}
 }
 
 // Get character via USART3 or USAR2
@@ -90,7 +90,7 @@ void USART_send_binary(uint16_t x, USART_TypeDef* my_USART)
 	}
 }
 
-
+// get cmd from PC en return the string with ETX.. etc checkson...
 void get_cmd_from_pc(char* cmd, USART_TypeDef* my_USART)
 {
 	uint8_t check_somme = STX;
@@ -100,7 +100,7 @@ void get_cmd_from_pc(char* cmd, USART_TypeDef* my_USART)
 	check_somme_carry = 0;
 	cmd[0] = check_somme = STX;
 	USART_puts("PC command master (end with \'Q\'): ", my_USART) ;
-	while((cmd[counter]=USART_receiver(my_USART)) != 0xA) {	// '\n'
+	while((cmd[counter]=USART_receiver(my_USART)) != 'Q') {	// '\n'
 		if(check_somme+cmd[counter] > 255) check_somme_carry = 1;
 		check_somme += cmd[counter];
 		counter++;
@@ -135,8 +135,6 @@ int main(void) {
 
 		get_cmd_from_pc(cmd_PC_board, PC_TO_BOARD);
 		USART_puts(cmd_PC_board, BOARD_TO_BOARD);
-		USART_puts("Command Sent.\n\r", PC_TO_BOARD);
-		
-		
+		USART_puts("\n\rCommand Sent!\n\r", BOARD_TO_BOARD);
 	}
 }

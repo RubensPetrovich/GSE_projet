@@ -12,8 +12,7 @@ Section Cross References
     main_uart.o(i.USART_Initialize) refers to stm32f4xx_usart.o(i.USART_Cmd) for USART_Cmd
     main_uart.o(i.USART_putc) refers to stm32f4xx_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
     main_uart.o(i.USART_putc) refers to stm32f4xx_usart.o(i.USART_SendData) for USART_SendData
-    main_uart.o(i.USART_puts) refers to stm32f4xx_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
-    main_uart.o(i.USART_puts) refers to stm32f4xx_usart.o(i.USART_SendData) for USART_SendData
+    main_uart.o(i.USART_puts) refers to main_uart.o(i.USART_putc) for USART_putc
     main_uart.o(i.USART_receiver) refers to stm32f4xx_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
     main_uart.o(i.USART_receiver) refers to stm32f4xx_usart.o(i.USART_ReceiveData) for USART_ReceiveData
     main_uart.o(i.USART_send_binary) refers to main_uart.o(i.USART_putc) for USART_putc
@@ -387,14 +386,14 @@ Image Symbol Table
     i.USART_Initialize                       0x080007a4   Section        0  main_uart.o(i.USART_Initialize)
     i.USART_ReceiveData                      0x08000800   Section        0  stm32f4xx_usart.o(i.USART_ReceiveData)
     i.USART_SendData                         0x0800080a   Section        0  stm32f4xx_usart.o(i.USART_SendData)
-    i.USART_putc                             0x08000814   Section        0  main_uart.o(i.USART_putc)
-    i.USART_puts                             0x08000838   Section        0  main_uart.o(i.USART_puts)
-    i.USART_receiver                         0x08000864   Section        0  main_uart.o(i.USART_receiver)
-    i.USART_send_binary                      0x08000884   Section        0  main_uart.o(i.USART_send_binary)
-    i.get_cmd_from_pc                        0x080008c0   Section        0  main_uart.o(i.get_cmd_from_pc)
-    i.main                                   0x0800099c   Section        0  main_uart.o(i.main)
-    x$fpl$fpinit                             0x080009dc   Section       10  fpinit.o(x$fpl$fpinit)
-    $v0                                      0x080009dc   Number         0  fpinit.o(x$fpl$fpinit)
+    i.USART_putc                             0x08000812   Section        0  main_uart.o(i.USART_putc)
+    i.USART_puts                             0x08000830   Section        0  main_uart.o(i.USART_puts)
+    i.USART_receiver                         0x0800084c   Section        0  main_uart.o(i.USART_receiver)
+    i.USART_send_binary                      0x0800086c   Section        0  main_uart.o(i.USART_send_binary)
+    i.get_cmd_from_pc                        0x080008a8   Section        0  main_uart.o(i.get_cmd_from_pc)
+    i.main                                   0x08000984   Section        0  main_uart.o(i.main)
+    x$fpl$fpinit                             0x080009c8   Section       10  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x080009c8   Number         0  fpinit.o(x$fpl$fpinit)
     .data                                    0x20000000   Section       16  stm32f4xx_rcc.o(.data)
     APBAHBPrescTable                         0x20000000   Data          16  stm32f4xx_rcc.o(.data)
     .bss                                     0x20000010   Section       96  libspace.o(.bss)
@@ -606,17 +605,17 @@ Image Symbol Table
     USART_Initialize                         0x080007a5   Thumb Code    84  main_uart.o(i.USART_Initialize)
     USART_ReceiveData                        0x08000801   Thumb Code    10  stm32f4xx_usart.o(i.USART_ReceiveData)
     USART_SendData                           0x0800080b   Thumb Code     8  stm32f4xx_usart.o(i.USART_SendData)
-    USART_putc                               0x08000815   Thumb Code    30  main_uart.o(i.USART_putc)
-    USART_puts                               0x08000839   Thumb Code    40  main_uart.o(i.USART_puts)
-    USART_receiver                           0x08000865   Thumb Code    26  main_uart.o(i.USART_receiver)
-    USART_send_binary                        0x08000885   Thumb Code    60  main_uart.o(i.USART_send_binary)
-    get_cmd_from_pc                          0x080008c1   Thumb Code   138  main_uart.o(i.get_cmd_from_pc)
-    main                                     0x0800099d   Thumb Code    38  main_uart.o(i.main)
-    _fp_init                                 0x080009dd   Thumb Code    10  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x080009e5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x080009e5   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x080009e8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000a08   Number         0  anon$$obj.o(Region$$Table)
+    USART_putc                               0x08000813   Thumb Code    30  main_uart.o(i.USART_putc)
+    USART_puts                               0x08000831   Thumb Code    26  main_uart.o(i.USART_puts)
+    USART_receiver                           0x0800084d   Thumb Code    26  main_uart.o(i.USART_receiver)
+    USART_send_binary                        0x0800086d   Thumb Code    60  main_uart.o(i.USART_send_binary)
+    get_cmd_from_pc                          0x080008a9   Thumb Code   138  main_uart.o(i.get_cmd_from_pc)
+    main                                     0x08000985   Thumb Code    38  main_uart.o(i.main)
+    _fp_init                                 0x080009c9   Thumb Code    10  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x080009d1   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x080009d1   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x080009d4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080009f4   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20000010   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000070   Data           0  libspace.o(.bss)
 
@@ -628,9 +627,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000229
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000a18, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x00000a04, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x08000000, Size: 0x00000a08, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x08000000, Size: 0x000009f4, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -706,16 +705,16 @@ Memory Map of the image
     0x080007a4   0x0000005c   Code   RO            5    i.USART_Initialize  main_uart.o
     0x08000800   0x0000000a   Code   RO          515    i.USART_ReceiveData  stm32f4xx_usart.o
     0x0800080a   0x00000008   Code   RO          518    i.USART_SendData    stm32f4xx_usart.o
-    0x08000812   0x00000002   PAD
-    0x08000814   0x00000024   Code   RO            6    i.USART_putc        main_uart.o
-    0x08000838   0x0000002c   Code   RO            7    i.USART_puts        main_uart.o
-    0x08000864   0x00000020   Code   RO            8    i.USART_receiver    main_uart.o
-    0x08000884   0x0000003c   Code   RO            9    i.USART_send_binary  main_uart.o
-    0x080008c0   0x000000dc   Code   RO           10    i.get_cmd_from_pc   main_uart.o
-    0x0800099c   0x00000040   Code   RO           11    i.main              main_uart.o
-    0x080009dc   0x0000000a   Code   RO          861    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x080009e6   0x00000002   PAD
-    0x080009e8   0x00000020   Data   RO          928    Region$$Table       anon$$obj.o
+    0x08000812   0x0000001e   Code   RO            6    i.USART_putc        main_uart.o
+    0x08000830   0x0000001a   Code   RO            7    i.USART_puts        main_uart.o
+    0x0800084a   0x00000002   PAD
+    0x0800084c   0x00000020   Code   RO            8    i.USART_receiver    main_uart.o
+    0x0800086c   0x0000003c   Code   RO            9    i.USART_send_binary  main_uart.o
+    0x080008a8   0x000000dc   Code   RO           10    i.get_cmd_from_pc   main_uart.o
+    0x08000984   0x00000044   Code   RO           11    i.main              main_uart.o
+    0x080009c8   0x0000000a   Code   RO          861    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x080009d2   0x00000002   PAD
+    0x080009d4   0x00000020   Data   RO          928    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x00000010, Max: 0xffffffff, ABSOLUTE)
@@ -742,14 +741,14 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        174          0          0          0          0       1917   gpio_stm32f4xx.o
-       696        142          0          0          0     278005   main_uart.o
+       676        136          0          0          0     277997   main_uart.o
         64         26        392          0       1536        892   startup_stm32f40_41xxx.o
        296         30          0         16          0       4282   stm32f4xx_rcc.o
        280          8          0          0          0       4148   stm32f4xx_usart.o
        340         32          0          0          0       1705   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      1856        238        424         16       1536     290949   Object Totals
+      1836        232        424         16       1536     290941   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          6          0          0          0          0          0   (incl. Padding)
 
@@ -800,15 +799,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      2144        254        424         16       1632     289885   Grand Totals
-      2144        254        424         16       1632     289885   ELF Image Totals
-      2144        254        424         16          0          0   ROM Totals
+      2124        248        424         16       1632     289877   Grand Totals
+      2124        248        424         16       1632     289877   ELF Image Totals
+      2124        248        424         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 2568 (   2.51kB)
+    Total RO  Size (Code + RO Data)                 2548 (   2.49kB)
     Total RW  Size (RW Data + ZI Data)              1648 (   1.61kB)
-    Total ROM Size (Code + RO Data + RW Data)       2584 (   2.52kB)
+    Total ROM Size (Code + RO Data + RW Data)       2564 (   2.50kB)
 
 ==============================================================================
 
