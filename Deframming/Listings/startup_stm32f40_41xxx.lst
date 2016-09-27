@@ -872,6 +872,7 @@ erwork --depend=.\objects\startup_stm32f40_41xxx.d -o.\objects\startup_stm32f40
 _41xxx.o -ID:\Documents\cours\ELEC5\CSE\workspace_keiluvision\GSE_projet\Defram
 ming\RTE -ID:\Documents\cours\ELEC5\CSE\workspace_keiluvision\GSE_projet\Defram
 ming\RTE\Device\STM32F407VG -ID:\etude\Pack\ARM\CMSIS\4.3.0\CMSIS\Include -ID:\
+etude\Pack\Keil\STM32F4xx_DFP\1.0.8\Boards\ST\STM32F401C-Discovery\Common -ID:\
 etude\Pack\Keil\STM32F4xx_DFP\1.0.8\Device\Include -ID:\etude\Pack\Keil\STM32F4
 xx_DFP\1.0.8\Device\StdPeriph_Driver\inc -ID:\etude\Pack\Keil\STM32F4xx_DFP\1.0
 .8\RTE_Driver --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 5

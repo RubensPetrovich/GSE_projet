@@ -1,6 +1,5 @@
-
 #include "Handler.h"
-#include "USART_function.h"
+
 
 
 void NVIC_Configuration(void)
@@ -17,29 +16,20 @@ void NVIC_Configuration(void)
 }
 
 void Car_to_interface (char s) {
-	static int counter;
-	if (counter) {
-		cmd_PC_board[counter++] = ETX;
-	}
-	if (s != 'Q' ){
-		cmd_PC_board[counter++] = s;
-	}	else {
-		cmd_PC_board[++counter] = ETX;	
-		
-		uint8_t check_somme = 0;
-		uint8_t check_somme_carry = 0;
-		uint8_t counter = 1;
-		uint8_t i ;
-		
-		for(i=0 ; i < counter-1 ; i++) {
-			if(check_somme+cmd_PC_board[i] > 255) check_somme_carry = 1;
-			check_somme += cmd_PC_board[i];
-		}
-		// Check somme final calcul and display
-		cmd_PC_board[counter-1] = ~((check_somme+check_somme_carry+ETX));			
-		counter = 0;
-		
-	}
+	static int counter = 0;
+	/*
+	if (s != ETX && s != STX) {
+		cmd[counter++] = s ;
+	} else if (s == ETX) {
+		cmd[counter-1] = '\0';
+		IRQ_main_connection(cmd, 0);
+	}	
+	*/
+	if (s != 'Q') {
+		commande[counter++] = s ;
+	} else {
+		IRQ_main_connection(0);
+	}	
 }
 
 

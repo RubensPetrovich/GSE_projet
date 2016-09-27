@@ -100,7 +100,7 @@ void get_cmd_from_pc(char* cmd, USART_TypeDef* my_USART)
 	check_somme_carry = 0;
 	cmd[0] = check_somme = STX;
 	USART_puts("PC command master (end with \'Q\'): ", my_USART) ;
-	while((cmd[counter]=USART_receiver(my_USART)) != 'Q') {	// '\n'
+	while((cmd[counter]=USART_receiver(my_USART)) != 0xD) {	// '\n'
 		if(check_somme+cmd[counter] > 255) check_somme_carry = 1;
 		check_somme += cmd[counter];
 		counter++;

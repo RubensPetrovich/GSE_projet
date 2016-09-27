@@ -3,17 +3,8 @@
 #ifndef USART3_function
 #define USART3_function
 
-#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_usart.h"
-#include "GPIO_STM32F4xx.h"
-#include "STM32F4xx.h"
+#include "commun.h"
 
-
-#define cmd_length_max 64	// ATTENTION if more than 64, use for the comter uint16_t (or int) insted of uint8_t !!
-#define STX 0x02
-#define ETX 0x03
-
-extern char cmd_PC_board [cmd_length_max];
 
 // Initialization USART 3
 void USART_Initialize(void) ;
