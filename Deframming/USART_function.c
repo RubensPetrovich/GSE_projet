@@ -1,5 +1,8 @@
 #include "USART_function.h"
 
+extern char commande[cmd_length_max];
+extern uint8_t command_sent;
+
 
 // Initialization USART 3 and 2
 void USART_Initialize(void) 

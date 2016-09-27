@@ -3,6 +3,8 @@
 #include "Handler.h"
 #include "LED.h"
 
+char commande[cmd_length_max];
+uint8_t command_sent;
 
 
 // Initialization GPIO
@@ -66,5 +68,6 @@ int main(void) {
 			LED_Off(2);
 			LED_On(3);
 		}
+		command_sent = 0;
 	}
 }

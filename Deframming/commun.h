@@ -10,14 +10,7 @@
 #define STX 0x02
 #define ETX 0x03
 
-uint8_t IRQ_main_connection(uint8_t from);
-
-
-char commande[cmd_length_max];
-uint8_t command_sent;
-
-
-
+//uint8_t IRQ_main_connection(uint8_t from);
 
 
 #endif

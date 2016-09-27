@@ -1,6 +1,7 @@
 #include "Handler.h"
 
-
+extern char commande[cmd_length_max];
+extern uint8_t command_sent;
 
 void NVIC_Configuration(void)
 {
@@ -25,10 +26,11 @@ void Car_to_interface (char s) {
 		IRQ_main_connection(cmd, 0);
 	}	
 	*/
-	if (s != 'Q') {
+	if (s != 0xD) {
 		commande[counter++] = s ;
 	} else {
-		IRQ_main_connection(0);
+		command_sent = 1;
+		counter = 0;
 	}	
 }
 
